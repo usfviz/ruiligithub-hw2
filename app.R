@@ -1,6 +1,11 @@
 
 rm(list = ls())
-setwd("~/Google-Drive/8.Visualization/hw/hw2")
+# setwd("~/Google-Drive/8.Visualization/hw/hw2")
+
+if(!require(shiny))install.packages("shiny",repos="http://cran.rstudio.com/")
+if(!require(ggvis))install.packages("ggvis",repos="http://cran.rstudio.com/")
+if(!require(dplyr))install.packages("dplyr",repos="http://cran.rstudio.com/")
+
 library(shiny)
 library(ggvis)
 library(dplyr)
