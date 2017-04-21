@@ -145,7 +145,7 @@ server <- function(input, output) {
     # selective continent
     df <- df[df$Region %in%  input$region, ]
     # selective population size
-    df$population <- 10 + (df$population * 1e-06) ^ input$population_size
+    df$population_bubble <- 10 + (df$population * 1e-06) ^ input$population_size
     df
   })
   
@@ -168,7 +168,8 @@ server <- function(input, output) {
     add_tooltip(all_values, "hover") %>%
     layer_points(
                  fillOpacity := 0.6,
-                 size := ~ population
+                 fillOpacity.hover := 1,
+                 size := ~ population_bubble
                  ) %>%
     add_relative_scales() %>%
     add_legend("fill", 
